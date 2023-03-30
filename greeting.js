@@ -1,5 +1,9 @@
 //// Greeting ////
 
+var checkTime = document.querySelector("#centerHotZone");
+
+checkTime.addEventListener("mouseover", showGreeting);
+
 function showGreeting(){
     let d = new Date();
     let currtime = d.getHours() * 100 + d.getMinutes();
@@ -12,6 +16,9 @@ function showGreeting(){
         document.querySelector('#greeting-message').innerHTML = 'Good morning, from the County Clerk!';
     }
 }
-showGreeting();
 
-setInterval(showGreeting, 10000);
+checkTime.addEventListener("click", goToHome);
+
+function goToHome(){
+    location.href='index.html';
+}
